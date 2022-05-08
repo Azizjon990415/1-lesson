@@ -1,6 +1,7 @@
 package uz.lab.lesson.service;
 
 import org.springframework.stereotype.Service;
+import uz.lab.lesson.DTO.NameDTO;
 
 import java.util.ArrayList;
 
@@ -12,7 +13,18 @@ public class NameService {
         add("Safia");
         add("Abdulaziz");
     }};
+
     public ArrayList<String> getNames(){
         return names;
+    }
+
+
+    public String addName(NameDTO nameDTO) {
+        names.add(nameDTO.getName());
+        if (names.contains(nameDTO.getName())){
+            return "Saved new name " + nameDTO.getName();
+        } else {
+            return "New name not saved " + nameDTO.getName();
+        }
     }
 }

@@ -1,6 +1,7 @@
 package uz.lab.lesson.service;
 
 import org.springframework.stereotype.Service;
+import uz.lab.lesson.DTO.AnimalDTO;
 
 import java.util.ArrayList;
 
@@ -15,7 +16,11 @@ public class AnimalService {
     }};
         public ArrayList<String> getAnimalservcie(){  return animalservcie; }
 
-        }
+    public String saveAnimal(AnimalDTO name) {
+            animalservcie.add(name.getAnimalName());
+            return ("daa saved");
+    }
+}
 
 
 

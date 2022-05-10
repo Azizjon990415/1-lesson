@@ -17,6 +17,11 @@ public class NameController {
         return  nameService.getNames();
     }
 
+    @GetMapping("api/name/{index}")
+    public String getName(@PathVariable int index){
+        return  nameService.getName(index);
+    }
+
     @PostMapping("api/name")
     public String saveName(@RequestBody NameDTO  nameDTO){
         return nameService.addName(nameDTO);

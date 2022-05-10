@@ -38,4 +38,8 @@ public class NameService {
         names.remove(index);
         return "Data removed";
     }
+
+    public String getName(int index) {
+        return names.get(index);
+    }
 }

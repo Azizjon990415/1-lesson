@@ -1,10 +1,7 @@
 package uz.lab.lesson.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import uz.lab.lesson.DTO.NameDTO;
 import uz.lab.lesson.service.NameService;
 
@@ -19,8 +16,19 @@ public class NameController {
     public ArrayList<String> names(){
         return  nameService.getNames();
     }
+
     @PostMapping("api/name")
     public String saveName(@RequestBody NameDTO  nameDTO){
         return nameService.addName(nameDTO);
+    }
+
+    @PutMapping("api/name/{index}")
+    public String updateName(@PathVariable Integer index, @RequestBody NameDTO nameDTO){
+        return nameService.updateName(index, nameDTO);
+    }
+
+    @DeleteMapping("api/name/{index}")
+    public String deleteName(@PathVariable int index){
+        return  nameService.deleteName(index);
     }
 }

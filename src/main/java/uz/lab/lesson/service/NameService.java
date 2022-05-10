@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 @Service
 public class NameService {
-    private static final ArrayList<String> names =new ArrayList<String>(){{
+    private final ArrayList<String> names =new ArrayList<String>(){{
         add("Asadbek");
         add("Shirina");
         add("Safia");
@@ -26,5 +26,16 @@ public class NameService {
         } else {
             return "New name not saved " + nameDTO.getName();
         }
+    }
+
+    public String updateName(Integer index, NameDTO nameDTO) {
+        names.remove(index.intValue());
+        names.add(index,nameDTO.getName());
+        return "the data updated";
+    }
+
+    public String deleteName(int index) {
+        names.remove(index);
+        return "Data removed";
     }
 }

@@ -23,6 +23,8 @@ public class AnimalController {
         return animalService.saveAnimal(name);
     }
     @DeleteMapping("api/animal/{index}")
-    public String deleteAnimal(@AsynchronouslyFormattable)
+    public String deleteAnimal(@PathVariable int index) {
+        return animalService.deleteAnimal(index);
 
-}
+    }
+    }

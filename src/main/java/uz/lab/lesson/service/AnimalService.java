@@ -7,18 +7,27 @@ import java.util.ArrayList;
 
 @Service
 public class AnimalService {
-    private static final ArrayList<String> animalservcie =new ArrayList<String>(){{
+    private static final ArrayList<String> animalservcie = new ArrayList<String>() {{
         add("elephant");
         add("cat");
         add("puppies");
         add("panda");
         add("ginger-cat");
     }};
-        public ArrayList<String> getAnimalservcie(){  return animalservcie; }
+
+    public ArrayList<String> getAnimalservcie() {
+        return animalservcie;
+    }
 
     public String saveAnimal(AnimalDTO name) {
-            animalservcie.add(name.getAnimalName());
-            return ("daa saved");
+        animalservcie.add(name.getAnimalName());
+        return ("daa saved");
+    }
+
+
+    public String deleteAnimal(int index) {
+        animalservcie.remove(index);
+        return "Data removed";
     }
 }
 

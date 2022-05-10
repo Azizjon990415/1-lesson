@@ -1,6 +1,5 @@
 package uz.lab.lesson.controller;
 
-import org.apache.logging.log4j.message.AsynchronouslyFormattable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import uz.lab.lesson.DTO.AnimalDTO;
@@ -19,12 +18,18 @@ public class AnimalController {
     }
 
     @PostMapping("api/animal")
-    public String saveAnimal(@RequestBody AnimalDTO name){
+    public String saveAnimal(@RequestBody AnimalDTO name) {
         return animalService.saveAnimal(name);
     }
+
     @DeleteMapping("api/animal/{index}")
     public String deleteAnimal(@PathVariable int index) {
         return animalService.deleteAnimal(index);
 
     }
+
+    @GetMapping("api/animal/{index}")
+    public String getAnimal(@PathVariable int index) {
+        return animalService.getAnimal(index);
     }
+}

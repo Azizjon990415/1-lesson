@@ -29,7 +29,12 @@ public class AnimalService {
         animalservcie.remove(index);
         return "Data removed";
     }
+
+    public String getAnimal(int index) {
+        return animalservcie.get(index);
+    }
 }
+
 
 
 

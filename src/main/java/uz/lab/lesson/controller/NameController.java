@@ -26,4 +26,9 @@ public class NameController {
     public String updateName(@PathVariable Integer index, @RequestBody NameDTO nameDTO){
         return nameService.updateName(index, nameDTO);
     }
+
+    @DeleteMapping("api/name/{index}")
+    public String deleteName(@PathVariable int index){
+        return  nameService.deleteName(index);
+    }
 }

@@ -33,4 +33,9 @@ public class NameService {
         names.add(index,nameDTO.getName());
         return "the data updated";
     }
+
+    public String deleteName(int index) {
+        names.remove(index);
+        return "Data removed";
+    }
 }

@@ -9,7 +9,11 @@ import java.util.ArrayList;
 
 @Service
 public class ToDoService {
-    private static final ArrayList<ToDo> todos=new ArrayList<>();
+    private static final ArrayList<ToDo> todos = new ArrayList<>();
+
+    public static String deleteToDo(int index) {
+        return null;
+    }
 
 
     public String addToDO(ToDoDTO toDoDTO) {

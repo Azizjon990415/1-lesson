@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
     public class BookDTO {
         private String title;
         private String description;
-        private String writter;
+        private String writer;
         private Integer year;
+        private Boolean available;
 
 }

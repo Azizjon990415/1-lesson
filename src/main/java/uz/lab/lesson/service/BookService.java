@@ -21,8 +21,9 @@ import java.util.ArrayList;
             Book book=new Book(
                     BookDTO.getTitle(),
                     BookDTO.getDescription(),
-                    BookDTO.getWritter(),
-                    BookDTO.getYear()
+                    BookDTO.getWriter(),
+                    BookDTO.getYear(),
+                    true
             );
             Books.add(book);
             return "Saved new book";
@@ -35,10 +36,22 @@ import java.util.ArrayList;
                         book.getTitle(),
                         book.getDescription(),
                         book.getWritter(),
-                        book.getYear()
+                        book.getYear(),
+                        book.getAvailable()
                         );
                 arrayList.add(bookDTO);
             }
             return arrayList;
         }
-}
+
+        public String setAvailable(int index, Boolean available) {
+            Book book = Books.remove(index);
+            book.setAvailable(available);
+            Books.add(index,book);
+            if (available){
+                return  "Book returned";
+            } else {
+                return "Book rented";
+            }
+        }
+    }

@@ -13,5 +13,6 @@ import lombok.NoArgsConstructor;
         private String description;
         private String writter;
         private Integer year;
+        private Boolean available;
 
     }

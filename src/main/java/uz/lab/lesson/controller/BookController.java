@@ -1,10 +1,7 @@
 package uz.lab.lesson.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import uz.lab.lesson.DTO.BookDTO;
 import uz.lab.lesson.service.BookService;
 
@@ -24,6 +21,11 @@ import java.util.ArrayList;
         @GetMapping("api/book")
         public ArrayList<BookDTO> getBooKs() {
             return BookService.getBooks();
+        }
+
+        @GetMapping("api/book/change-status/{index}")
+        public String changeBookAvailableStatus(@RequestParam Boolean available,@PathVariable int index){
+            return bookService.setAvailable(index,available);
         }
 
     }

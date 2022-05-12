@@ -1,11 +1,13 @@
 package uz.lab.lesson.service;
 
+import org.springframework.stereotype.Service;
 import uz.lab.lesson.DTO.ToDoDTOShirina;
 import uz.lab.lesson.domain.Status;
 import uz.lab.lesson.domain.ToDo;
 
 import java.util.ArrayList;
 
+@Service
 public class ToDoServiceShirina {
     private static final ArrayList<ToDo> todos = new ArrayList<>();
 
